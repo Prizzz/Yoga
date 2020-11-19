@@ -1,0 +1,93 @@
+#menu__toggle {
+    display: none;
+  }
+  
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+  
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 55px;
+    right: 60px;
+    
+    width: 26px;
+    height: 26px;
+  
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+  
+    width: 100%;
+    height: 3px;
+  
+    background-color: #484f5b;
+  
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  
+  .fixed{
+      position: fixed;
+  }
+
+.logo-hidden,
+.menu-hidden{
+    display: none;
+}
+
+.is-open{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    opacity: 0.8;
+    background-color: #f4dad5;
+    position: fixed;
+    top: 0px;
+    padding-top: 100px;
+    right: 0px;
+    padding-right: 35px;
+    text-align: right;
+}
+
+@media(max-width: 768px){
+    .menu{
+        display: none;
+    }
+
+    .logo-hidden{
+        display: block;
+    }
+
+    .menu-item:last-child{
+        margin-right: 20px;
+    }
+}
